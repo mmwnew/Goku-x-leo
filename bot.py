@@ -65,10 +65,10 @@ class Bot(Client):
             except Exception as e:
                 logging.info(f"Make Sure REQ_CHANNEL 2 ID is correct or {e}")
 
-        #app = web.AppRunner(await web_server())
-       # await app.setup()
-      #  bind_address = "0.0.0.0"
-       # await web.TCPSite(app, bind_address, PORT).start()     
+        app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"
+        await web.TCPSite(app, bind_address, 8080).start()     
         
         logging.info(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
         logging.info(LOG_STR)
